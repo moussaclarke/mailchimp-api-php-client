@@ -23,11 +23,11 @@ require_once '/path/to/your/project/vendor/autoload.php';
 $client = new \Classy\MailchimpClient('dc834647d7f8a38c86b25dd4fdeff6f7-us2'); // use your mailchimp API key here
 
 // Fetches your mailchimp lists
-$httpResponse = $client->get('/lists');
+$httpResponse = $client->get('lists');
 $lists = json_decode($httpResponse->getBody()->getContents());
 
 // Or shorter:
-$lists = $client->getData('/lists');
+$lists = $client->getData('lists');
 ```
 
 ## Exception handling
@@ -36,7 +36,7 @@ This client is using Guzzle Http client. Exceptions are thrown when the Http res
 
 ```php
 try {
-    $response = $client->get('/lists/e87ab1c34');
+    $response = $client->get('lists/e87ab1c34');
 } catch (Exception $e) {
     if ($e instanceof \GuzzleHttp\Exception\ConnectException) {
         // there was a networking error
