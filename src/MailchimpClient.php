@@ -55,9 +55,9 @@ class MailchimpClient
      * @param array $options
      * @return mixed
      */
-    public function getData($uri, $options = [])
+    public function getData($uri, $array = false, array $options = [])
     {
-        return json_decode($this->client->get($uri, $options)->getBody()->getContents());
+        return json_decode($this->client->get($uri, $options)->getBody()->getContents(), $array);
     }
 
     /**

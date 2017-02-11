@@ -28,6 +28,9 @@ $lists = json_decode($httpResponse->getBody()->getContents());
 
 // Or shorter:
 $lists = $client->getData('lists');
+
+// Or if you want an array rather than stdClass
+$lists = $client->getData('lists', true);
 ```
 
 ## Exception handling
